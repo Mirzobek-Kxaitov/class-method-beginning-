@@ -1,0 +1,24 @@
+
+
+class Student:
+
+    bitiruv_yili = 2024
+    talaba_soni = 0
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        Student.talaba_soni += 1
+
+student1 = Student('Musa', 25)
+student2 = Student('Ahmad', 25)
+student3 = Student('Ahmad', 25)
+
+# print(student1.name)
+# print(student1.age)
+# print(Student.bitiruv_yili)
+
+print(f" My graduating class of {Student.bitiruv_yili} has {Student.talaba_soni } students")
+print(student1.name)
+print(student2.name)
+print(student3.name)
