@@ -1,0 +1,50 @@
+
+
+class Car:
+    # Define a class named 'Car'.
+    #A class is a blueprint for creating objects. Here, Car is the name of the class.
+    def __init__(self,  model, year, colour, for_sale):
+    # Define the initializer method to set up an object.
+    #The __init__ method is a special method in Python. It runs automatically when an object is created from the class.
+        self.model = model
+    ## Store the 'model' value in the object attribute 'model'.
+        self.year = year
+    ## Store the 'year' value in the object attribute 'year'.
+    #Similarly, the value of year is assigned to self.year to store the car's manufacturing year.
+        self.colour = colour
+    ## Store the 'colour' value in the object attribute 'colour'.
+        self.for_sale = for_sale
+    #self refers to the current object being created. The model parameter value is assigned to the self.model attribute.
+## Store the 'for_sale' status in the object attribute 'for_sale'.
+    def drive(self):
+        print(f"You drive the {self.colour} {self.model}")
+
+    def stop(self):
+        print(f"You stop the {self.colour} {self.model}")
+
+    def describe(self):
+        print(f"{self.year} {self.colour} {self.model} ")
+#qayerdan >>> qayerga import qilishi
+
+car1 = Car("Cobalt",2015,"grey", False)
+car2 = Car("Bwd",2025,"black", True)
+car3 = Car("G-Wagen",2024,"white", True)
+## Create a new Car object named 'car2' with specified attributes.
+
+
+# car1.drive()
+# car1.stop()
+car3.describe()
+
+
+
+# print(car2.model)
+# #This displays the model attribute of the car2 object, which is "Bwd".
+# print(car2.year)
+# #Print the 'year' attribute of car2.
+# print(car2.colour)
+# # Print the 'colour' attribute of car2.
+# print(car2.for_sale)
+# #This displays the for_sale attribute of the car2 object, which is True, indicating the car is for sale.
+
+
