@@ -1,0 +1,41 @@
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        self.is_alive = True
+        # This is the parent class Animal. It initializes an object with a name and sets its is_alive status to True.
+
+
+    def eat(self):
+        print(f"{self.name} is eating")
+        #The eat method prints a message indicating that the animal is eating.
+
+
+    def sleep(self):
+        print(f"{self.name} sleeping")
+        #The sleep method prints a message indicating that the animal is sleeping.
+
+class Cat(Animal):
+    def speak(self):
+        print("MEOW")
+        #The Cat class inherits from Animal and has its own speak method that outputs "MEOW".
+
+class Dog(Animal):
+    def speak(self):
+        print("WOOF")
+        #The Dog class inherits from Animal and defines a speak method that outputs "WOOF".
+
+class Mouse(Animal):
+    def speak(self):
+        print("SQUEK")
+        # The Mouse class inherits from Animal and defines a speak method that outputs "SQUEK".
+
+dog = Dog("Mailo")
+cat = Cat("Julia")
+mouse = Mouse("Mickey")
+#Here, three objects are created, each with a name: "Mailo" for the dog, "Julia" for the cat, and "Mickey" for the mouse.
+
+dog.speak()
+cat.speak()
+mouse.speak()
+#Each object calls its speak method, outputting their respective sounds: "WOOF" for the dog, "MEOW" for the cat, and "SQUEK" for the mouse.
