@@ -1,0 +1,55 @@
+class Animal():
+    #(Base class): Animal
+    def __init__(self,name):
+        self.name = name
+        #The Animal class is used to store the name of an animal.
+
+
+
+    def eat(self):
+        print(f"This {self.name} is eating")
+
+    def sleep(self):
+        print(f"This {self.name} is sleeping")
+
+        #The Animal class is used to store the name of an animal.
+
+
+class Prey(Animal):
+    def flee(self):
+        print(f"This {self.name} is fleeing.")
+        #The Prey class inherits from Animal and adds a method for fleeing (flee).
+
+class Predator(Animal):
+    def hunt(self):
+        print(f"This {self.name} is hunting.")
+        #The Predator class inherits from Animal and adds a method for hunting (hunt).
+
+class Rabbit(Prey):
+    pass
+#The Rabbit class inherits from Prey, automatically gaining all its methods.
+
+
+class Hawk(Predator):
+    pass
+#The Hawk class inherits from Predator and uses all its methods.
+
+class Fish(Prey,Predator):
+    pass
+#The Fish class inherits from both Prey and Predator, gaining behaviors for both fleeing and hunting.
+
+rabbit = Rabbit("Andre")
+hawk = Hawk("Mirzo")
+fish = Fish("Anderson")
+#Three objects were created: rabbit (rabbit), hawk (hawk), and fish (fish).
+
+
+hawk.eat()
+# The hawk object calls the eat method from the Animal class. Output: This Mirzo is eating.
+rabbit.sleep()
+#The rabbit object calls the sleep method from the Animal class. Output: This Andre is sleeping.
+fish.hunt()
+#The fish object calls the hunt method from the Predator class. Output: This Anderson is hunting.
+fish.flee()
+
+#Inheritance allows for code reuse and grouping similar behaviors of animals in one place.
