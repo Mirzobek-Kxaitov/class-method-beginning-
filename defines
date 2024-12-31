@@ -1,0 +1,98 @@
+#This program defines a Student class to keep track of students,
+#calculate the total number of students, their average GPA (Grade Point Average), and average diploma scores.
+#Ushbu dastur Student (Talaba) klassini ta'riflaydi,
+#talabalar sonini, ularning GPA (reyting balli) va diplom baholari o‘rtachasini hisoblash uchun ishlatiladi.
+
+
+
+class Student:
+
+    count = 0
+    #count: Keeps track of the total number of students.Jami talabalar sonini saqlaydi.
+    total_gpa = 0
+    #Stores the sum of all students' GPA. Barcha talabalar GPA (reyting ball) yig‘indisini saqlaydi.
+    total_scores = 0
+    #Stores the sum of all students' diploma scores (total).Barcha talabalar diplom baholari yig‘indisini saqlaydi.
+    def __init__(self, name, gpa,total):
+        #Initializes a student with their name, GPA, and diploma score.
+        # It also updates the total number of students, total GPA, and total scores.
+        #Har bir talabani ismi, GPA va diplom bahosi bilan yaratadi.
+        # Shu bilan birga, umumiy talabalar soni, umumiy GPA va baholarni yangilaydi.
+        self.name = name
+        self.gpa = gpa
+        self.total = total
+        Student.count += 1
+        Student.total_gpa += gpa
+        Student.total_scores += total
+
+    #INSTANCE METHOD
+    def get_info(self):
+        return f" {self.name} {self.gpa} "
+    #This method returns a string containing the student’s name and GPA.
+
+    @classmethod
+    def get_count(cls):
+        return f"Total # number of students: {cls.count}"
+    #This method is a class method that returns the total number of students created.
+
+    @classmethod
+    def get_total_gpa(cls):
+        if cls.count == 0:
+            return "No students to calculate GPA"
+        return f"Avarage gpa of students {cls.total_gpa / cls.count:.2f}"
+    #If there are no students, it returns a message saying so.
+    # Otherwise, it calculates the average GPA by dividing the total GPA by the total number of students.
+
+    @classmethod
+    def get_total_scores(cls):
+        if cls.count == 0:
+            return "No students to calculate scores"
+        return f"Avarage total scores of students {cls.total_scores / cls.count:.2f}"
+#if there are no students, it returns a message saying no scores can be calculated.
+#Otherwise, it calculates the average diploma score by dividing the total scores by the total number of students.
+
+student = Student("Yosin", 3.98,79)
+student = Student("Nozima", 4.03,80)
+student = Student("Muxriddin", 4.20,85)
+student = Student("Zamira", 3.71,77)
+student = Student("Abdurahmon", 3.92,79)
+student = Student("Luqmonjon", 4.57,91)
+student = Student("Diyora", 4.24,86)
+student = Student("Jamoliddin", 3.85,79)
+student = Student("Shokir", 3.66,74)
+student = Student("Javoxir", 3.98,80)
+student = Student("Ayyubxon", 4.05,83)
+student = Student("Oysha", 4.18,83)
+student = Student("Fazliddin aka", 3.63,75)
+student = Student("Olimjon", 3.67,73)
+student = Student("E_Muhammad", 4.12,85)
+student = Student("Shahnoza", 4.16,84)
+student = Student("Abdulloh", 3.96,81)
+student = Student("Bobur", 3.79,79)
+student = Student("Rahmatulloh", 4.17,84)
+student = Student("A_Madina", 3.96,80)
+student = Student("Mahbuba", 4.23,88)
+student = Student("Jasur", 4.15,84)
+student = Student("Z_Madina", 4.02,82)
+student = Student("Sanjar", 3.81,77)
+student = Student("Abdulaziz", 3.70,75)
+student = Student("Mohlaroy", 4.02,82)
+student = Student("Mirzobek", 4.23,85)
+student = Student("V_Madina", 3.95,78)
+student = Student("Sulaymonxon", 3.84,77)
+student = Student("T_Muhammadjon", 4.26,88)
+student = Student("Sardorbek", 3.98,80)
+student = Student("Marhabo", 3.82,78)
+student = Student("Sarvar", 4.33,89)
+student = Student("Nurulloh", 4.13,83)
+student = Student("Nazokat", 4.15,85)
+student = Student("Ibrohim", 3.40,69)
+student = Student("Aliaskar", 3.82,77)
+student = Student("Ziyomuhammad", 3.81,76)
+student = Student("Ma'muraxon", 4.09,82)
+
+
+print(Student.get_count())
+print(Student.get_total_gpa())
+print(Student.get_total_scores())
+#Prints the total number of students, average GPA, and average diploma score.
